@@ -16,12 +16,12 @@ export class GitRequestService {
     this.gitRepos = new Repos("", "", "", new Date, 0, 0, "");
   }
 
-  getUSer(searchName: string) {
+  getUser(searchName: string) {
     interface Response {
       url: string,
       login: string;
       html_url: string;
-      location: string
+      location: string;
       public_repos: number;
       followers: number;
       following: number;
@@ -30,8 +30,8 @@ export class GitRequestService {
     }
 
     return new Promise((resolve, reject) => {
-      this.http.get<Response>('https://api.github.com/users/' + searchName + '?access_token=' + environment.apiToken).toPromise().then(
-        (result) => {
+      this.http.get<Response>('https://api.github.com/users/' + searchName + '?access_token=' + environment.apiToken).
+        toPromise().then((result) => {
           this.gitUser = result;
           console.log(this.gitUser);
           resolve();
