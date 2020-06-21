@@ -1,10 +1,22 @@
 # GitReposApp
 
+GitReposApp angular Project was developed at Moringa school coding classes to further understanding of Angular.
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.7.
+
+The appliation connects to Github and retrieves user information and repository information. It allows one to search for users and to also search for repositories
 
 ## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+The following technology has been used to develop this application:
+
+1. Node JS ver 14.X
+2. Angular ver 9
+3. Bootstrap ver 4
+4. Fontawesome
+
+To improve on the application, clone to your local machine and run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+
 
 ## Code scaffolding
 
