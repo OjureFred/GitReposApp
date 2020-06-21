@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "GitReposApp"
+    }
+  },
+  "defaultProject": "GitReposApp",
+  "cli": {
+    "analytics": "3ed7499c-8c88-422a-b669-91bea7ec6eb8"
+  }
 }
