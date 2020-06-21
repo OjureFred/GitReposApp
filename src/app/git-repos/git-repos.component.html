@@ -1,7 +1,14 @@
 <div class="container">
     <div class="panel panel-default">
         <div class="panel-heading">
-            {{repo.email}}
+           <p> Login Name:{{user.login}}</p>
+        </div>
+        <div class="panel-body">
+            <div class="row">
+                <div class="col-sm-3">
+                    <img src="{{user.avatar_url}}" class="img-circle img-responsive" alt="Profile Image">
+                </div>
+            </div>
         </div>
     </div>
 </div>

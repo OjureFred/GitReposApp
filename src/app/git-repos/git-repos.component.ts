@@ -19,6 +19,7 @@ export class GitReposComponent implements OnInit {
     this.httpService.getUser(name).then(
       (result) => {
         this.user = this.httpService.gitUser;
+        console.log(this.user);
       },
       (error) =>{
         console.log(error);
