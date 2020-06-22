@@ -1,14 +1,15 @@
 <div class="container">
-    <div class="panel panel-default">
-        <div class="panel-heading">
+    <div class="panel-group">
+    <div class="card">
+        <div class="card-title">
            <label class="btn btn-success btn-lg">Github Profile for:=>{{user.login}}</label>
         </div>
-        <div class="panel-body">
-            <div class="row">
+        <div class="card-body">
+         <div class="row">
                 <div class="col-sm-4">
                     <img src="{{user.avatar_url}}" class="img-circle img-responsive" width="250px" height="250px" alt="Profile Image">
                 </div>
-                <div class="col-sm-5">
+                <div class="col-sm-8">
                     <ul class="list-group">
                         <li class="list-group-item">Follows: {{user.following}}</li>
                         <li class="list-group-item">Followed By: {{user.followers}}</li>
@@ -21,17 +22,20 @@
             </div>
         </div>
     </div>
-    <div class="panel panel-default">
-     <div class="panel-heading">
+    
+    <div class="card">
+     <div class="card-body">
        <label class="btn btn-sucess btn-lg">Public Repositories</label>
       </div>
-      <div class="panel-body" *ngFor="let rep of repo">
-         <p class="clear-fix">{{rep.name}}<a href="{{rep.html_url}}" 
-                    class="btn btn-sm btn-outline pull-right">View this project on Github</a></p>
-         <p>{{rep.description}}  | Created: {{rep.created_at}}</p>
-         <p>Language: {{rep.language}} | Forks: {{rep.forks}} | Watchers: {{rep.watchers_count}}</p>
-                
-      </div>
+      <ul class="list-group" *ngFor="let rep of repo">
+      <li>
+       <h5 class="clear-fix">Repo name: {{rep.name}}<a href="{{rep.html_url}}" 
+                    class="btn btn-sm btn-warning pull-right">View this project on Github</a></h5>
+         <p>{{rep.description}}  || Created: {{rep.created_at}}</p>
+         <p>Language: {{rep.language}} || Forks: {{rep.forks}} || Watchers: {{rep.watchers_count}}</p>
+       </li>
+       </ul>
       
+      </div>
     </div>
 </div>
