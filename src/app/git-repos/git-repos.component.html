@@ -1,14 +1,37 @@
 <div class="container">
     <div class="panel panel-default">
         <div class="panel-heading">
-           <p> Login Name:{{user.login}}</p>
+           <label class="btn btn-success btn-lg">Github Profile for:=>{{user.login}}</label>
         </div>
         <div class="panel-body">
             <div class="row">
-                <div class="col-sm-3">
-                    <img src="{{user.avatar_url}}" class="img-circle img-responsive" alt="Profile Image">
+                <div class="col-sm-4">
+                    <img src="{{user.avatar_url}}" class="img-circle img-responsive" width="250px" height="250px" alt="Profile Image">
+                </div>
+                <div class="col-sm-5">
+                    <ul class="list-group">
+                        <li class="list-group-item">Follows: {{user.following}}</li>
+                        <li class="list-group-item">Followed By: {{user.followers}}</li>
+                        <li class="list-group-item">Url: {{user.html_url}}</li>
+                        <li class="list-group-item">Created on: {{user.created_at}}</li>
+                        <li class="list-group-item">Location: {{user.location}}</li>
+                        <li class="list-group-item">User Info: {{user.url}}</li>
+                    </ul>
                 </div>
             </div>
         </div>
+    </div>
+    <div class="panel panel-default">
+     <div class="panel-heading">
+       <label class="btn btn-sucess btn-lg">Public Repositories</label>
+      </div>
+      <div class="panel-body" *ngFor="let rep of repo">
+         <p class="clear-fix">{{rep.name}}<a href="{{rep.html_url}}" 
+                    class="btn btn-sm btn-outline pull-right">View this project on Github</a></p>
+         <p>{{rep.description}}  | Created: {{rep.created_at}}</p>
+         <p>Language: {{rep.language}} | Forks: {{rep.forks}} | Watchers: {{rep.watchers_count}}</p>
+                
+      </div>
+      
     </div>
 </div>
