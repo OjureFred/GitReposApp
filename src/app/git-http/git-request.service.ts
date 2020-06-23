@@ -12,12 +12,13 @@ export class GitRequestService {
   gitRepos: Repos;
 
   constructor(private http: HttpClient) {
-    this.gitUser = new User("", "", "", "", 0, 0, 0, "", new Date);
+    this.gitUser = new User("", "", "", "", "", 0, 0, 0, "", new Date);
     this.gitRepos = new Repos("", "", "", new Date, 0, 0, "");
   }
 
   getUser(searchName: string) {
     interface Response {
+      name: string,
       url: string,
       login: string;
       html_url: string;
