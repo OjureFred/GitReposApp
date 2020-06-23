@@ -3,7 +3,7 @@
     <div class="panel-group">
     <div class="card">
         <div class="card-title">
-           <label class="btn btn-success btn-lg">Github Profile for:=>{{user.login}}</label>
+           <label class="btn btn-success btn-lg">Github Profile for:==={{user.login}}</label>
         </div>
         <div class="card-body">
          <div class="row">
@@ -12,8 +12,8 @@
                 </div>
                 <div class="col-sm-8">
                     <ul class="list-group">
-                        <li class="list-group-item">Follows: {{user.following}}</li>
-                        <li class="list-group-item">Followed By: {{user.followers}}</li>
+                        <li class="list-group-item">Follows: {{user.following | numCount}}</li>
+                        <li class="list-group-item">Followed By: {{user.followers | numCount}}</li>
                         <li class="list-group-item">Url: {{user.html_url}}</li>
                         <li class="list-group-item">Created on: {{user.created_at | date}}</li>
                         <li class="list-group-item">Location: {{user.location}}</li>
@@ -32,15 +32,15 @@
               <h5 class="card-title">{{rep.name}}</h5>
               <ul class="list-group">
                 <li class="list-group-item list-group-item-success"><i class="fa fa-briefcase"style="font-size:20px;"></i>   Description: {{rep.description}}</li>
-                <li class="list-group-item list-group-item-success"><i class="fa fa-user"style="font-size:20px;"></i>   Created on: {{rep.created_at}}</li>
+                <li class="list-group-item list-group-item-success"><i class="fa fa-user"style="font-size:20px;"></i>   Created on: {{rep.created_at | date}}</li>
                 <li class="list-group-item list-group-item-success"><i class="fa fa-map-marker"style="font-size:20px;"></i>   Language: {{rep.language}}</li>
-                <li class="list-group-item list-group-item-success"><i class="fa fa-clock-o"style="font-size:20px;"></i>   Forks: {{rep.forks}}</li>
-                <li class="list-group-item list-group-item-success"><i class="fa fa-inr"style="font-size:20px;"></i>   Watchers:  rep.watchers_count</li>
+                <li class="list-group-item list-group-item-success"><i class="fa fa-clock-o"style="font-size:20px;"></i>   Forks: {{rep.forks | numCount}}</li>
+                <li class="list-group-item list-group-item-success"><i class="fa fa-inr"style="font-size:20px;"></i>   Watchers:  {{rep.watchers_count | numCount}}</li>
               </ul>
               
             </div>
             <div class="card-footer">
-              <button type="button" class="btn" id="left-panel-link" >Register</button>
+                <a href="{{rep.html_url}}" class="btn" id="left-panel-link" target="_blank">View in Github</a>
               
             </div>
           </div>

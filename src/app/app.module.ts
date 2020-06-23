@@ -11,6 +11,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { SearchUserComponent } from './search-user/search-user.component';
 import { GitRepositoryComponent } from './git-repository/git-repository.component';
+import { NumCountPipe } from './num-count.pipe';
 
 @NgModule({
   declarations: [
@@ -20,15 +21,11 @@ import { GitRepositoryComponent } from './git-repository/git-repository.componen
     NavbarComponent,
     NotFoundComponent,
     SearchUserComponent,
-    GitRepositoryComponent
+    GitRepositoryComponent,
+    NumCountPipe,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    HttpClientModule,
-    FormsModule
-  ],
+  imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
