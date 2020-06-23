@@ -37,7 +37,7 @@ export class GitRepositoryComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    //this.getTheUser('OjureFred');
+    this.getTheUser('OjureFred');
   }
 
 }

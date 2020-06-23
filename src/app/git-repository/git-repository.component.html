@@ -3,10 +3,10 @@
       
         
       <div class="text-center repos" id="reps">
-        <h2>Repositories</h2>
+        <h2>All Repositories</h2>
     </div>
     <div class="container allrepos">
-      <div class="card" appHighlight *ngFor="let rep of repos" style="width: 22rem;" class="repo">
+      <div class="card" appHighlight *ngFor="let rep of repos" >
         <div class="card-body" >
           <h5 class="card-title"><span class="top">Repo Name:</span> &nbsp;{{rep.name}} </h5>
           <div class="card-text">

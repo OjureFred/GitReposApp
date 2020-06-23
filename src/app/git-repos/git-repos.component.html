@@ -25,28 +25,27 @@
     </div>
     
     <div class="list-of-repos" *ngFor="let rep of repo">
- <!-- Card -->
-<div class="card">
+ 
+        <div class="card">
+            
+            <div class="card-body">
+              <h5 class="card-title">{{rep.name}}</h5>
+              <ul class="list-group">
+                <li class="list-group-item list-group-item-success"><i class="fa fa-briefcase"style="font-size:20px;"></i>   Description: {{rep.description}}</li>
+                <li class="list-group-item list-group-item-success"><i class="fa fa-user"style="font-size:20px;"></i>   Created on: {{rep.created_at}}</li>
+                <li class="list-group-item list-group-item-success"><i class="fa fa-map-marker"style="font-size:20px;"></i>   Language: {{rep.language}}</li>
+                <li class="list-group-item list-group-item-success"><i class="fa fa-clock-o"style="font-size:20px;"></i>   Forks: {{rep.forks}}</li>
+                <li class="list-group-item list-group-item-success"><i class="fa fa-inr"style="font-size:20px;"></i>   Watchers:  rep.watchers_count</li>
+              </ul>
+              
+            </div>
+            <div class="card-footer">
+              <button type="button" class="btn" id="left-panel-link" >Register</button>
+              
+            </div>
+          </div>
+          
 
-    <!-- Card image -->
-    <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Others/images/43.jpg" height="15px" alt="Card image cap">
-  
-    <!-- Card content -->
-    <div class="card-body">
-  
-      <!-- Title -->
-      <h4 class="card-title"><a>{{rep.name}}</a></h4>
-      <!-- Text -->
-      <p class="card-text">{{rep.description}}</p>
-      <p>Created on: {{rep.created_at | date}}</p>
-      Language: {{rep.language}} || Forks: {{rep.forks}} || Watchers: {{rep.watchers_count}}
-      <!-- Button -->
-      <a href="{{rep.html_url}}" class="btn btn-primary">View in Github</a>
-  
-    </div>
-  
-  </div>
-  <!-- Card -->
     
       </div>
     </div>
