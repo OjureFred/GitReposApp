@@ -1,4 +1,5 @@
 <div class="container-fluid">
+  <app-search-user (search)="getTheUser($event)"></app-search-user>
     <div class="overlay">
       
         
@@ -6,34 +7,30 @@
         <h2>All Repositories</h2>
     </div>
     <div class="container allrepos">
-      <div class="card" appHighlight *ngFor="let rep of repos" >
-        <div class="card-body" >
-          <h5 class="card-title"><span class="top">Repo Name:</span> &nbsp;{{rep.name}} </h5>
-          <div class="card-text">
-            <hr>
-            <div class="desc"><span class="top">Description:</span> &nbsp;{{rep.description}} 
-              <span *ngIf="!rep.description" style="color: red;">Repository has no description!</span>
+
+      <div class="list-of-repos" *ngFor="let rep of repos">
+ 
+        <div class="card">
+            
+            <div class="card-body">
+              <h5 class="card-title">{{rep.name}}</h5>
+              <ul class="list-group">
+                <li class="list-group-item list-group-item-success"><i class="fa fa-briefcase"style="font-size:20px;"></i>   Description: {{rep.description}}</li>
+                <li class="list-group-item list-group-item-success"><i class="fa fa-user"style="font-size:20px;"></i>   Created on: {{rep.created_at | date}}</li>
+                <li class="list-group-item list-group-item-success"><i class="fa fa-map-marker"style="font-size:20px;"></i>   Language: {{rep.language}}</li>
+                <li class= "list-group-item list-group-item-success" appRedCol><i class="fa fa-clock-o"style="font-size:20px;"></i>   Forks: {{rep.forks | numCount}}</li>
+                <li class="list-group-item list-group-item-success" appRedCol><i class="fa fa-inr"style="font-size:20px;"></i>   Watchers:  {{rep.watchers_count | numCount}}</li>
+              </ul>
+              
             </div>
-            <hr>
-            <div class="card-subtitle mb-2">
-                <span class="top">Language: </span> {{rep.language}}
-            </div>
-            <div class="card-subtitle mb-2"><span class="top">Created:&nbsp; <span id="created">{{rep.created_at}}</span> &nbsp;  On:</span> &nbsp;{{rep.created_at | date}}
-            </div>
-          </div>
-          </div>
-          <div class="card-footer">
-            <div class="btn-group" role="group" aria-label="Third group">
-              <button class="btn btn-sm btn-primary"><i class="fa fa-eye" style="font-size:16px"></i> &nbsp;<span class="forks">{{rep.watchers_count}}</span></button>
-            </div>
-            <div class="btn-group" role="group" aria-label="Third group">
-              <button class="btn btn-sm btn-outline-warning"><i class="fa fa-code-fork" style="font-size:16px"></i> &nbsp;<span class="forks">{{rep.forks}}</span></button>
-            </div>
-            <br><br>
-            <div class="btn-group" role="group" aria-label="Third group">
-              <button class="btn btn-sm btn-primary" id="visit"><a href="{{rep.html_url}}" class="card-link">VIEW ON GITHUB &nbsp; <i class="fa fa-arrow-circle-right" style="font-size:16px"></i></a> </button> 
+            <div class="card-footer">
+                <a href="{{rep.html_url}}" class="btn" id="left-panel-link" target="_blank">View in Github</a>
+              
             </div>
           </div>
+          
+
+    
       </div>
     </div>
     </div>
