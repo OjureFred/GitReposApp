@@ -12,6 +12,7 @@ import { NotFoundComponent } from './not-found/not-found.component';
 import { SearchUserComponent } from './search-user/search-user.component';
 import { GitRepositoryComponent } from './git-repository/git-repository.component';
 import { NumCountPipe } from './num-count.pipe';
+import { RedColDirective } from './red-col.directive';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { NumCountPipe } from './num-count.pipe';
     SearchUserComponent,
     GitRepositoryComponent,
     NumCountPipe,
+    RedColDirective,
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule],
   providers: [],
