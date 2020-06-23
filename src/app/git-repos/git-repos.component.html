@@ -1,4 +1,5 @@
 <div class="container">
+    <app-search-user (search)="getTheUser($event)"></app-search-user>
     <div class="panel-group">
     <div class="card">
         <div class="card-title">
@@ -14,7 +15,7 @@
                         <li class="list-group-item">Follows: {{user.following}}</li>
                         <li class="list-group-item">Followed By: {{user.followers}}</li>
                         <li class="list-group-item">Url: {{user.html_url}}</li>
-                        <li class="list-group-item">Created on: {{user.created_at}}</li>
+                        <li class="list-group-item">Created on: {{user.created_at | date}}</li>
                         <li class="list-group-item">Location: {{user.location}}</li>
                         <li class="list-group-item">User Info: {{user.url}}</li>
                     </ul>
@@ -37,7 +38,7 @@
       <h4 class="card-title"><a>{{rep.name}}</a></h4>
       <!-- Text -->
       <p class="card-text">{{rep.description}}</p>
-      <p>Created on: {{rep.created_at}}</p>
+      <p>Created on: {{rep.created_at | date}}</p>
       Language: {{rep.language}} || Forks: {{rep.forks}} || Watchers: {{rep.watchers_count}}
       <!-- Button -->
       <a href="{{rep.html_url}}" class="btn btn-primary">View in Github</a>

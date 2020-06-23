@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -9,6 +10,7 @@ import { AboutComponent } from './about/about.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { SearchUserComponent } from './search-user/search-user.component';
+import { GitRepositoryComponent } from './git-repository/git-repository.component';
 
 @NgModule({
   declarations: [
@@ -17,12 +19,14 @@ import { SearchUserComponent } from './search-user/search-user.component';
     AboutComponent,
     NavbarComponent,
     NotFoundComponent,
-    SearchUserComponent
+    SearchUserComponent,
+    GitRepositoryComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
