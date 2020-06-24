@@ -11,8 +11,9 @@ const routes: Routes = [
   { path: 'gitrepos', component: GitReposComponent },
   { path: 'gitlist', component: GitRepositoryComponent },
   { path: 'about', component: AboutComponent },
-  { path: '**', component: NotFoundComponent },
-  { path: ' ', redirectTo: '/gitrepos', pathMatch: 'full'}
+  { path: '', redirectTo: '/gitrepos', pathMatch: 'full' },
+  
+  { path: '**', component: NotFoundComponent }
 ];
 
 @NgModule({
